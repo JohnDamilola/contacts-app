@@ -1,0 +1,105 @@
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: cornflowerblue;
+  /*background-color:  #212f3c ;*/
+}
+li{padding-top: 15px;}
+.head{color: cornflowerblue;
+  font-family: Roboto;
+  display: inline-block; font-size: 1.4em; text-align: left !important;
+}
+@media screen and (max-width: 520px) {
+  .head{
+    font-size: 1em; text-align: center !important;
+  }
+  .img{
+    display: none; padding: 60px; width: 10px;
+  }
+}
+.lim{min-height: 500px !important;}
+.imgs{max-height: 350px !important; background-color: crimson; color: #fff; padding: 0px;}
+.img{display: inline-block; padding: 20px; padding-top: 0px;  width: 70px;}
+.navbar-brands{padding: 10px;}
+
+.navv{
+  background-color: #fff ; padding: 2px;
+  border-bottom: 1px solid  #fff  !important;
+  box-shadow: 0px 1px 2px 0px #a3a3a3;
+}
+.account{
+  font-size: 1.4em !important;
+  border-radius: 50%;
+  color:#fff;
+  background-color: cornflowerblue;
+  padding: 10px;
+  margin: 10px;
+}
+.account2{
+  font-size: 1em !important;
+  border-radius: 50%;
+  color:#fff;
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+.sidebox{
+  background-color: #fff;
+  padding: 10px;
+  margin: 0;
+  margin-top: 0px;
+  color: #000;
+}
+.active{
+  border-left:4px solid cornflowerblue;
+  background-color:#ecf0f1;
+}
+.sidebar{
+  margin-top:20px;
+  box-shadow: 2px 3px 5px 1px #a3a3a3;
+  padding: 0px !important;
+}
+.mainbar{
+  margin-top:20px;
+  height:75vh;
+  border-radius: 5px;
+  padding: 0px !important;
+}
+.blue{
+  color: cornflowerblue;
+}
+.inputs{
+  height:40px; font-size: 1.2em; width: 100%;
+  border: 1px solid cornflowerblue ; margin: 2px;
+  border-radius: 5px;
+  color:#fff; padding: 10px;
+  margin-top: 10px;
+  text-align: center; background-color:cornflowerblue;
+}
+.add{
+  height:40px; font-size: 0.9em; width: 100%;
+  border: 1px solid cornflowerblue ; margin: 2px;
+  border-radius: 5px;
+  color:cornflowerblue; padding: 10px;
+  background-color:#fff;
+}
+.top{margin-top: 70px;}
+.top2{margin-top: 30px;}
+.contact-row{
+  background: #fff;
+  margin:0px;
+  height:45px;
+  padding: 20px;
+  padding-top: 5px;
+  box-shadow: 2px 2px 2px 1px #a3a3a3;
+}
+.details{
+  padding: 10px;
+  font-weight: lighter;
+  padding-top:40px !important;
+}
+.leftSidebar{
+  background-color: #fff;
+  height:80vh;
+  padding: 10px !important;
+}
