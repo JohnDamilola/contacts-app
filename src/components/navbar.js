@@ -7,7 +7,10 @@ import { OverlayTrigger } from 'react-bootstrap';
 
 var Navbar = React.createClass({
   getInitialState() {
-    return { showModal: false };
+    return { 
+        showModal: false ,
+        namess: "",
+    };
   },
 
   close() {
@@ -17,12 +20,18 @@ var Navbar = React.createClass({
   open() {
     this.setState({ showModal: true });
   },
-  handleSubmit(e) {
+  handleSubmit: function(e) {
       e.preventDefault();
       var name = this.refs.name.value;
       var phone = this.refs.phone.value;
 
       this.addContact(name,phone);
+  },
+  handleSearch: function(e) {
+      e.preventDefault();
+      var namess = this.refs.namess.value;
+      this.setState({namess:namess})
+      console.log("the name you typed is " + this.state.namess)
   },
   render: function() {
       const popover = (
@@ -46,7 +55,9 @@ var Navbar = React.createClass({
                 </a>
             </div>
             <div className="col-md-7 text-center">
-                <input type="text" className="inputs form-controls" placeholder="Search for contacts" />
+            <form>
+                <input type="text" onChange={this.handleSearch} ref="namess" className="inputs form-controls" placeholder="Search for contacts" />
+            </form>
             </div>
             <div className="nav col-md-2 text-center" style={{padding:0}}>
                 <ul className="nav">

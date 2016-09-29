@@ -28,6 +28,22 @@ var IndexPage = React.createClass({
   },
   render: function() {
     const {contacts} = this.props;
+    contacts.sort(function(a, b){
+       if(a.name < b.name){
+        return -1;
+       }
+        else if(a.name > b.name){
+        return 1;
+       } 
+       return 0;
+    });
+    if (this.props.namess.length === 0){
+      var contactsList = contacts.map((contact,i) => <Contact {...this.props} key={i} i={i} contact={contact} />)
+    } else{
+      contactsList = contacts.filter((contacta,i) => 
+        contacta.name.toLowerCase().indexOf(this.props.namess.toLowerCase()) !== -1).map((contact,i) => 
+        <Contact {...this.props} key={i} i={i} contact={contact} />);
+    }
     return(
       <div>
         <div className="row">
@@ -48,7 +64,7 @@ var IndexPage = React.createClass({
           <div className={this.state.classes2} style={{overflow:'auto'}}>
             <p>All Contacts ({contacts.length}) <i onClick={this.sidebar} className={this.state.open} style={{cursor:'pointer'}}></i> </p>
             <div className="mainbar" style={{overflow:'auto'}}>
-              {contacts.map((contact,i)=> <Contact {...this.props} key={i} i={i} contact={contact} />)}
+              {contactsList}
             </div>
           </div>
           <div className={this.state.classes} >
