@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import { Popover } from 'react-bootstrap';
 import { OverlayTrigger } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+import { FormGroup } from 'react-bootstrap';
 
 var Main = React.createClass({
   getInitialState() {
@@ -41,32 +43,26 @@ var Main = React.createClass({
     return(
       <div>
         <div>
-      <nav className="navbar navv navbar-fixed-top" role="navigation">
-        <div className="container">
-            <div className="navbar-header col-md-3">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span className="sr-only">Toggle navigation</span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brands" href="#">
-                    <h3 className="head text-center"><i className="fa fa-phone"></i> Contact</h3>
-                </a>
-            </div>
-            <div className="col-md-7 text-center">
-            <form>
-                <input type="text" onChange={this.handleSearch} ref="namess" className="inputs form-controls" placeholder="Search for contacts" />
-            </form>
-            </div>
-            <div className="nav col-md-2 text-center" style={{padding:0}}>
-                <ul className="nav">
-                    <li className="small pull-left"> <i className="mdi mdi-sort account2"></i> Sort &nbsp;</li>
-                    <li className="small pull-left" style={{cursor:'pointer'}} onClick={this.open}><i className="mdi mdi-plus account2"></i> New Contact </li>
-                </ul>
-            </div> 
-        </div>
-</nav>
+        <Navbar className="navv navbar-fixed-top">
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="/" className="head text-center"><i className="fa fa-phone"></i> Contact</a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <div className="nav navbar-nav navbar-right">
+        <li style={{paddingTop:10,cursor:'pointer'}}><i className="mdi mdi-account account2"></i> John Damilola &nbsp;</li>
+        <li style={{paddingTop:10,cursor:'pointer'}} onClick={this.open}><i className="mdi mdi-plus account2"></i> Add contact</li>
+      </div>
+      <div className="nav col-md-6 hidden-xs navbar-nav navbar-right">
+        <FormGroup>
+          <input type="text" onChange={this.handleSearch} ref="namess" className="inputs form-controls" placeholder="Search for contacts" />
+        </FormGroup>
+     </div>
+    </Navbar.Collapse>
+  </Navbar>
+      
 <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>
