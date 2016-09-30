@@ -26,10 +26,18 @@ var Main = React.createClass({
       var name = this.refs.name.value;
       var phone = this.refs.phone.value;
       var group = "all";
-      //store.dispatch(addContact(name,phone));
-      this.props.addContact(name,phone,group);
-      this.close();
-      alert("Contact successfully added");
+      var index = this.props.contacts.length + 1;
+      if (name.length > 0 && phone.length > 0){
+        this.props.addContact(name,phone,index,group);
+        this.close();
+        alert("Contact successfully added");
+      } else {
+        alert("Some fields are missing");
+      }
+      
+  },
+  deleteContact: function(i) {
+    this.props.deleteContact(i)
   },
   handleSearch: function(e) {
       e.preventDefault();
@@ -100,6 +108,7 @@ var Main = React.createClass({
           {React.cloneElement(this.props.children, {
             namess: this.state.namess,
             contacts: this.props.contacts,
+            deleteContact:this.deleteContact
           })}
         </div> 
       </div>
