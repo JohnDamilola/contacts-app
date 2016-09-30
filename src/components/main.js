@@ -26,7 +26,10 @@ var Main = React.createClass({
       var name = this.refs.name.value;
       var phone = this.refs.phone.value;
 
-      this.addContact(name,phone);
+      //store.dispatch(addContact(name,phone));
+      this.props.addContact(name,phone);
+      this.close();
+      alert("Contact successfully added");
   },
   handleSearch: function(e) {
       e.preventDefault();
@@ -37,7 +40,7 @@ var Main = React.createClass({
   render: function() {
     const popover = (
       <Popover id="modal-popover" title="popover">
-        very popover. such engagement
+        Add a new Contact
       </Popover>
     );
     return(
@@ -66,7 +69,7 @@ var Main = React.createClass({
 <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>
-                <h4><OverlayTrigger overlay={popover}><a>Add New Contact</a></OverlayTrigger></h4>
+            <OverlayTrigger overlay={popover}><a>Add New Contact</a></OverlayTrigger>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>

@@ -6,7 +6,7 @@ import contacts from './data/contacts';
 
 import rootReducer from './reducers/index.js';
 
-const initialState = {
+export const initialState = {
     contacts
 }
 
