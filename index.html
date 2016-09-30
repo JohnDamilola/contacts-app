@@ -4,10 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Redux Tutorials</title>
+    <title>Contacts app</title>
   </head>
   <body style="background-color: #d0d3d4 ; transparent:0.9">
     <div id="root"></div>
 
     </body>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAeYno4LsEoEdVTZ8UoAq5wljJg5HmNcyQ",
+    authDomain: "contactsapp-b4661.firebaseapp.com",
+    databaseURL: "https://contactsapp-b4661.firebaseio.com",
+    storageBucket: "contactsapp-b4661.appspot.com",
+    messagingSenderId: "524258601412"
+  };
+  firebase.initializeApp(config);
+</script>
+    <!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<!-- ReactFire -->
+<script src="https://cdn.firebase.com/libs/reactfire/0.6.0/reactfire.min.js"></script>
 </html>

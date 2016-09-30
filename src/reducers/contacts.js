@@ -13,7 +13,8 @@ export default function contacts(state=initialState, action) {
             ...state,
             {
                 name: action.name,
-                phone: action.phone
+                phone: action.phone,
+                group: "all"
             }
         ];
 

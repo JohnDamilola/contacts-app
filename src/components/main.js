@@ -25,9 +25,9 @@ var Main = React.createClass({
       e.preventDefault();
       var name = this.refs.name.value;
       var phone = this.refs.phone.value;
-
+      var group = "all";
       //store.dispatch(addContact(name,phone));
-      this.props.addContact(name,phone);
+      this.props.addContact(name,phone,group);
       this.close();
       alert("Contact successfully added");
   },
